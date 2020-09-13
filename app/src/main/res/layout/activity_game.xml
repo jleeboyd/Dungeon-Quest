@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/game_relative_layout_margin"
+        tools:context=".GameActivity">
+
+        <TextView
+            android:id="@+id/textViewHealth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/health_text_margin_start"
+            android:textSize="@dimen/health_text_size"
+            android:textStyle="bold"
+            android:text="@string/health" />
+
+        <ProgressBar
+            android:id="@+id/determinateBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="@dimen/one_hundred"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewHealth"
+            android:layout_marginStart="@dimen/det_bar_margin_start"
+            android:progress="@string/one_hundred"/>
+
+        <Chronometer
+            android:id="@+id/chronometerTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/determinateBar"
+            android:layout_alignStart="@id/determinateBar"
+            android:textStyle="bold"/>
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/textViewAttachedText"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+
+        <!--        android:layout_marginStart="@dimen/doh_text_margin_start"-->
+        <!--        android:textColor="@color/red"-->
+        <!--        android:text="" />-->
+
+        <TextView
+            android:id="@+id/textViewScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/score_text_size"
+            android:layout_marginLeft="@dimen/score_text_margin_left"
+            android:text="@string/score" />
+
+        <TextView
+            android:id="@+id/textViewScoreAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="@dimen/score_text_size"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/textViewScore" />
+
+        <TextView
+            android:id="@+id/textViewGameOver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/game_over"
+            android:textColor="@color/red"
+            android:textStyle="italic"
+            android:textSize="@dimen/forty"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/buttonRestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/ten"
+            android:layout_marginTop="@dimen/ten"
+            android:text="@string/restart"
+            android:textSize="@dimen/twenty"
+            android:layout_below="@id/textViewGameOver"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:onClick="restartGame"/>
+
+
+        <Button
+            android:id="@+id/buttonLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="@string/left"
+            android:textSize="45dp"
+            android:layout_above="@id/buttonDown" />
+
+        <Button
+            android:id="@+id/buttonRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="@string/right"
+            android:textSize="45dp"
+            android:layout_toEndOf="@id/buttonDown"
+            android:layout_above="@id/buttonDown"/>
+
+        <Button
+            android:id="@+id/buttonDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="@string/down"
+            android:layout_alignParentBottom="true"
+            android:textSize="45dp"
+            android:layout_toEndOf="@id/buttonLeft"/>
+
+        <Button
+            android:id="@+id/buttonUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="@string/up"
+            android:textSize="45dp"
+            android:layout_toEndOf="@id/buttonLeft"
+            android:layout_above="@id/buttonLeft"
+            />
+        <Button
+            android:id="@+id/buttonAttack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:text="@string/attack"
+            android:textSize="45dp"
+            android:layout_above="@id/buttonDown"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+</FrameLayout>
